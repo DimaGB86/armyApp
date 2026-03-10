@@ -1,0 +1,14 @@
+{% extends 'prizyv/base.html' %}
+
+{% block title %}Редактировать призывника{% endblock %}
+
+{% block body %}
+<h1>Редактировать: {{ prizivnik.get_full_name }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+    <a href="{% url 'priziv_index' %}">Отмена</a>
+</form>
+{% endblock %}

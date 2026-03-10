@@ -1,0 +1,15 @@
+<!-- prizyv/templates/prizyv/success.html -->
+{% extends 'prizyv/base.html' %}
+
+{% block title %}Заявка отправлена{% endblock %}
+
+{% block body %}
+<div class="container text-center" style="padding: 100px 0;">
+    <i class="bi bi-check-circle-fill" style="font-size: 80px; color: #28a745;"></i>
+    <h1 style="margin: 30px 0;">Спасибо за заявку!</h1>
+    <p class="lead">Наш секретарь свяжется с вами для подтверждения записи.</p>
+    <a href="{% url 'priziv_index' %}" class="btn-apply" style="display: inline-block; margin-top: 30px;">
+        Вернуться на главную
+    </a>
+</div>
+{% endblock %}
