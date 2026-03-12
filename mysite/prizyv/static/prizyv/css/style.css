@@ -32,6 +32,10 @@ body {
     font-weight: bold;
     color: #333;
 }
+.slogan-style {
+    font-size: 18px;
+    font-style: italic;
+}
 
 .slogan {
     font-size: 18px;
@@ -40,8 +44,9 @@ body {
 }
 
 .contact-info, .address-info {
-    font-size: 14px;
+    font-size: 18px;
     color: #333;
+    font-style: italic;
 }
 
 .contact-info i, .address-info i {
@@ -599,5 +604,121 @@ footer {
     
     .hero-highlight h3 {
         font-size: 26px;
+    }
+}
+/* Адаптивный header */
+.mobile-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+.info-column {
+    margin-bottom: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.info-item i {
+    color: var(--info-color);
+    font-size: 16px;
+    margin-top: 3px;
+    min-width: 20px;
+}
+
+.info-item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-item a:hover {
+    color: var(--info-color);
+}
+
+.info-item span {
+    line-height: 1.4;
+    color: #333;
+}
+
+.button-column {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 992px) {
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-header {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+        padding: 20px 0;
+    }
+    
+    .nav-menu.show {
+        display: block;
+    }
+    
+    .button-column {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+    
+    .info-column {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-item {
+        font-size: 14px;
+    }
+    
+    .btn-apply {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .info-item {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .info-item i {
+        margin-top: 0;
     }
 }
