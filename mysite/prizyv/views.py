@@ -1,9 +1,7 @@
-# prizyv/views.py
 from django.shortcuts import render, redirect
-from django.http import HttpRequest
-from .models import Prizivnik
+from .models import Application
 
-def priziv_index(request: HttpRequest):
+def priziv_index(request):
     """Главная страница с формой для призывников"""
     
     if request.method == 'POST':
@@ -15,12 +13,12 @@ def priziv_index(request: HttpRequest):
         city = request.POST.get('city', '')
         
         # Создаем запись в базе данных
-        Prizivnik.objects.create(
+        Application.objects.create(
             last_name=last_name,
             first_name=first_name,
             patronymic=patronymic,
             phone=phone,
-            address=city,
+            city=city,
         )
         
         # Перенаправляем на страницу успеха

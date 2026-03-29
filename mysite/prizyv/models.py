@@ -1,4 +1,3 @@
-# prizyv/models.py
 from django.db import models
 
 class Prizivnik(models.Model):
@@ -29,10 +28,6 @@ class Application(models.Model):
     phone = models.CharField('Телефон', max_length=20)
     city = models.CharField('Город', max_length=100, blank=True)
     created_at = models.DateTimeField('Дата заявки', auto_now_add=True)
-    
-    # Поля с датой и временем сделаем необязательными или удалим
-    # appointment_date = models.DateField('Желаемая дата', null=True, blank=True)
-    # appointment_time = models.TimeField('Желаемое время', null=True, blank=True)
     
     class Meta:
         verbose_name = 'Заявка'
